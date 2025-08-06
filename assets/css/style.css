@@ -21,7 +21,9 @@ body {
 @keyframes fadeOut {
     from {
         opacity: 0;
-    } to {
+    }
+
+    to {
         opacity: 1;
     }
 }
@@ -115,6 +117,7 @@ select {
     background-color: #fff;
     font-size: 16px;
     margin-top: 10px;
+    box-sizing: border-box;
 }
 
 .wkPicker {
@@ -137,6 +140,11 @@ select {
     justify-content: space-evenly;
     align-items: center;
     flex-direction: column;
+    border-radius: 4px;
+}
+
+.wkPicker .optDiv:hover .disp {
+    box-shadow: 0 0 15px 5px #0078d4;
 }
 
 .disp {
@@ -145,14 +153,121 @@ select {
     background-color: #fff;
     border: 1px solid #ccc;
     border-radius: 4px;
+    transition-duration: .16s;
 }
 
-@media (max-width: 1366px) {
+.pGrid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 40px 0;
+}
+
+.explaSide {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    gap: 10px;
+}
+
+.explaSide textarea {
+    margin: 0;
+    font-size: 15px;
+    width: 100%;
+    height: calc(100% - 20px);
+    box-sizing: border-box;
+    resize: none;
+    padding: 10px;
+}
+
+.sGrid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-rows: repeat(4, 40px);
+    grid-template-areas: "sInp1 lInp1 lInp1 lInp1"
+        "sInp2 lInp2 lInp2 lInp2"
+        "eInp eInp eInp eInp"
+        "eB eB eB butBlock";
+    gap: 10px;
+    padding: 10px;
+    position: relative;
+}
+
+input,
+textarea {
+    padding: 6px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    border-bottom: 3px solid #ccc;
+    transition-duration: .1s;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.sGrid input,
+.sGrid textarea {
+    font-size: 15px;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-bottom-color: #0078d4;
+}
+
+button {
+    color: black;
+    border-radius: 4px;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-bottom: 1px solid #d0d0d0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding: 6px 13px;
+    transition-duration: .1s;
+    font-size: 15px;
+}
+
+button[type="primary"] {
+    background-color: #0078d4;
+    border: 1px solid #0091ff;
+    border-bottom-color: #41acff;
+    color: white;
+}
+
+button[type="danger"] {
+    background-color: #d40000;
+    border: 1px solid #ff0000;
+    border-bottom-color: #ff4141;
+}
+
+#unbookClass {
+    display: none
+}
+
+button:hover {
+    filter: brightness(1.1);
+}
+
+button:active {
+    filter: brightness(.9);
+}
+
+@media (max-height: 768px) {
     .sideBar {
         width: 15vw;
     }
 
     .content {
         width: 85vw;
+    }
+
+    .disp {
+        height: 80px;
+    }
+
+    .wkPicker .optDiv {
+        height: 140px;
+        width: 140px;
     }
 }

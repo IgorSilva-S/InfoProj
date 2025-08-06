@@ -39,25 +39,47 @@
         </select>
         <div class="wkPicker">
             <div class="optDiv">
+                <span id="time1">7h - 7h50</span>
                 <div class="disp"></div>
             </div>
             <div class="optDiv">
+                <span id="time2">7h50 - 8h40</span>
                 <div class="disp"></div>
             </div>
             <div class="optDiv">
+                <span id="time3">8h40 - 9h30</span>
                 <div class="disp"></div>
             </div>
             <div class="optDiv">
+                <span id="time4">9h45 - 10h35</span>
                 <div class="disp"></div>
             </div>
             <div class="optDiv">
+                <span id="time5">10h35 - 11h25</span>
                 <div class="disp"></div>
             </div>
             <div class="optDiv">
+                <span id="time6">11h25 - 12h15</span>
                 <div class="disp"></div>
             </div>
 
+        </div>
 
+        <h1>Dados de agendamento</h1>
+        <div class="pGrid">
+            <div class="explaSide">
+                <textarea name="" id="expla" placeholder="Digite brevemente o conteúdo da aula"></textarea>
+            </div>
+            <div class="sGrid">
+                <input type="text" name="" id="" style="grid-area: sInp1;" placeholder="Turma" title="Padronize nesse formato: (Número) ano (Letra maiúscula)">
+                <input type="number" name="" id="" min="1" style="grid-area: sInp2;" placeholder="Qnt. Alunos">
+                <input type="text" name="" id="" style="grid-area: lInp1;" placeholder="Nome do professor">
+                <input type="password" name="" id="" style="grid-area: lInp2;" placeholder="Palavra de segurança">
+                <input type="email" name="" id="" style="grid-area: eInp;" placeholder="Email do professor"> 
+                <div style="grid-area: eB;"></div>
+                <button style="grid-area: butBlock" id="bookClass" type="primary">Agendar aula</button>
+                <button style="grid-area: butBlock" id="unbookClass" type="danger">Apagar aula</button>
+            </div>
         </div>
     </div>
 
